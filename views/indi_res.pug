@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+style.
+    body{
+      margin:0px;
+      padding:0px;
+    }
+    .container {
+        display: flex;
+        justify-content:center;
+        background-color: aqua;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .header{
+      display:flex;
+      justify-content:center;
+      background-color:grey;
+    }
+
+
+<body>
+    <div class="header">
+      <h1>The search result of your query</h1>
+    </div>
+    <div class="container">
+        table
+          tr
+            th Title
+            th Date
+            th Category
+            th Links
+          each i in words
+              tr
+                td #{i.Title}
+                td #{i.Date}
+                td #{i.Category}
+                td 
+                  a(href=i.Link) #{i.Link} 
+                  
+              
+    </div>
+
+</body>
+
+</html>
