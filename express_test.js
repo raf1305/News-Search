@@ -21,7 +21,7 @@ app.post("/submit", (req, res) => {
     let limit=req.body.number.toString();
     //console.log(search)
     //console.log(limit)
-    // let process = spawnSync('python3',["./starter.py",search,limit] );
+    let process = spawnSync('python',["./starter.py",search,limit] );
     // let str1=process.output.toString();
     //console.log(str1)
     let data=fs.readFileSync('sample.json', 'utf8');

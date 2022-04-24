@@ -10,7 +10,7 @@ search = sys.argv[1]
 article_number = sys.argv[2]
 article_num = int(article_number)
 search = search.split(' ')
-
+print('num ', article_num)
 search = '+'.join(search)
 
 links_passed = set()
@@ -21,6 +21,7 @@ data['bbc'] = []
 while (j <= 30):
     my_url = "https://www.bbc.co.uk/search?q="
     my_url = my_url + search + '&page=' + str(j)
+    j = j + 1
     # print(my_url)
     uClient = uReq(my_url)
     page_html = uClient.read()
@@ -59,18 +60,18 @@ while (j <= 30):
         if (len(links_passed) == article_num):
             break
 
-    try:
-        div_tags = page_soup.find("div", {"class", "css-v574h-StyledContainer e1br8c160"})
-        # print(div_tags.p.text)
-    except:
-        pass
-    else:
-        break
+    # try:
+    #     div_tags = page_soup.find("div", {"class", "css-v574h-StyledContainer e1br8c160"})
+    #     # print(div_tags.p.text)
+    # except:
+    #     pass
+    # else:
+    #     break
     if (int(j) == 30):
         break
     if (len(links_passed) == article_num):
         break
-    j = j + 1
+    
 
 with open('sample.json', 'w') as outfile:
     json.dump(data, outfile)

@@ -37,12 +37,14 @@ style.
     <div class="container">
         table
           tr
+            th #
             th Title
             th Date
             th Category
             th Links
-          each i in words
+          each i,index in words
               tr
+                td #{index+1}
                 td #{i.Title}
                 td #{i.Date}
                 td #{i.Category}
