@@ -16,13 +16,13 @@ app.get("/", (req, res) => {
 
 
 app.post("/submit", (req, res) => {
-    //console.log(req.body)
+    console.log(req.body)
     let search=req.body.myName.toString();
     let limit=req.body.number.toString();
     //console.log(search)
     //console.log(limit)
-    let process = spawnSync('python3',["./starter.py",search,limit] );
-    let str1=process.output.toString();
+    // let process = spawnSync('python3',["./starter.py",search,limit] );
+    // let str1=process.output.toString();
     //console.log(str1)
     let data=fs.readFileSync('sample.json', 'utf8');
     let words=JSON.parse(data);
